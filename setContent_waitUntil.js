@@ -10,9 +10,10 @@ async function run() {
 
     console.time('setContent:waitUntil')
     await page.setContent(html, {
-        waitUntil: 'networkidle2'
+        waitUntil: 'networkidle0'
     })
     console.timeEnd('setContent:waitUntil')
+    await page.pdf({path: './pdfs/setContent_waituntil.pdf'})
     await browser.close()
 }
 

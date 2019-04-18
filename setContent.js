@@ -11,6 +11,7 @@ async function run() {
     console.time('setContent')
     await page.setContent(html)
     console.timeEnd('setContent')
+    await page.pdf({path: './pdfs/setContent.pdf'})
     await browser.close()
 }
 
